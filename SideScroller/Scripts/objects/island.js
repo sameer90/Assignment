@@ -12,18 +12,18 @@ var objects;
             this.image.regX = this.width / 2;
             this.image.regY = this.height / 2;
             this.reset();
-            this.dy = 5;
+            this.dy = -5;
             game.addChild(this.image);
         }
         Island.prototype.update = function () {
-            this.image.y += this.dy;
-            if (this.image.y > this.stage.canvas.height + this.height) {
+            this.image.x += this.dy;
+            if (this.image.x < 0) {
                 this.reset();
             }
         };
         Island.prototype.reset = function () {
-            this.image.x = Math.floor(Math.random() * this.stage.canvas.width);
-            this.image.y = -this.height;
+            this.image.y = Math.floor(Math.random() * this.stage.canvas.height);
+            this.image.x = this.stage.canvas.width;
         };
         Island.prototype.destroy = function () {
             game.removeChild(this.image);
