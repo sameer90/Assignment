@@ -89,14 +89,12 @@
   <ItemGroup>
     <Content Include="assets\images\1945.bmp" />
     <Content Include="assets\images\atlas.png" />
+    <Content Include="assets\images\bck.png" />
     <Content Include="assets\images\cloud.png" />
-    <Content Include="assets\images\heli.gif" />
+    <Content Include="assets\images\fighterplane.png" />
+    <Content Include="assets\images\helicopter.png" />
     <Content Include="assets\images\island.png" />
     <Content Include="assets\images\loading.jpg" />
-    <Content Include="assets\images\ocean-x.gif" />
-    <Content Include="assets\images\ocean.gif" />
-    <Content Include="assets\images\plane.png" />
-    <Content Include="assets\images\sideplane.gif" />
     <Content Include="css\app.css" />
     <Content Include="css\normalize.css" />
     <Content Include="index.html" />

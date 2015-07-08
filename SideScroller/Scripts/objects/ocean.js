@@ -1,4 +1,4 @@
-﻿/// <reference path="../managers/asset.ts" />
+/// <reference path="../managers/asset.ts" />
 var objects;
 (function (objects) {
     // Ocean Class
@@ -10,22 +10,19 @@ var objects;
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.reset();
-
-            this.dy = 5;
-
+            this.dy = -4;
             game.addChild(this.image);
         }
         Ocean.prototype.update = function () {
             this.image.x += this.dy;
-            if (this.image.x >= 0) {
+            //alert(this.image.x);
+            if (this.image.x <= -2060) {
                 this.reset();
             }
         };
-
         Ocean.prototype.reset = function () {
-            this.image.x = -790;
+            this.image.x = -260;
         };
-
         Ocean.prototype.destroy = function () {
             game.removeChild(this.image);
         };

@@ -1,4 +1,4 @@
-﻿/// <reference path="../constants.ts" />
+/// <reference path="../constants.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../objects/plane.ts" />
 /// <reference path="../objects/ocean.ts" />
@@ -17,30 +17,23 @@ var states;
         changeState(currentState);
     }
     states.playButtonClicked = playButtonClicked;
-
     function menuState() {
         ocean.update();
         plane.update();
     }
     states.menuState = menuState;
-
     function menu() {
         var gameNameLabel;
-
         // Declare new Game Container
         game = new createjs.Container();
-
         // Instantiate Game Objects
         ocean = new objects.Ocean(stage, game);
         plane = new objects.Plane(stage, game);
-
         // Show Cursor
         stage.cursor = "default";
-
         // Display Game Over
         gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "MAIL PILOT");
         game.addChild(gameNameLabel);
-
         // Display Play Again Button
         playButton = new objects.Button(stage.canvas.width / 2, 300, "playButton");
         game.addChild(playButton);

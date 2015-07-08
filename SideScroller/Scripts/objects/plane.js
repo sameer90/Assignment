@@ -6,18 +6,17 @@ var objects;
         function Plane(stage, game) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Sprite(managers.Assets.atlas, "heli");
-            this.player = new createjs.Bitmap(managers.Assets.loader.getResult("heli"));
-            this.player.y = 430;
+            this.image = new createjs.Sprite(managers.Assets.atlas, "plane");
+            this.image.y = 400;
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
-            this.player.regX = this.width / 2;
-            this.player.regY = this.height / 2;
-            game.addChild(this.player);
+            this.image.regX = 1;
+            this.image.regY = 10;
+            game.addChild(this.image);
             this.engineSound = createjs.Sound.play('engine', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
         }
         Plane.prototype.update = function () {
-            this.image.x = this.stage.mouseY;
+            this.image.y = this.stage.mouseY;
         };
         Plane.prototype.destroy = function () {
             this.engineSound.stop();

@@ -1,4 +1,4 @@
-﻿/// <reference path="../managers/asset.ts" />
+/// <reference path="../managers/asset.ts" />
 var objects;
 (function (objects) {
     // Island Class
@@ -13,7 +13,6 @@ var objects;
             this.image.regY = this.height / 2;
             this.reset();
             this.dy = 5;
-
             game.addChild(this.image);
         }
         Island.prototype.update = function () {
@@ -22,12 +21,10 @@ var objects;
                 this.reset();
             }
         };
-
         Island.prototype.reset = function () {
             this.image.x = Math.floor(Math.random() * this.stage.canvas.width);
             this.image.y = -this.height;
         };
-
         Island.prototype.destroy = function () {
             game.removeChild(this.image);
         };
@@ -35,4 +32,3 @@ var objects;
     })();
     objects.Island = Island;
 })(objects || (objects = {}));
-//# sourceMappingURL=island.js.map

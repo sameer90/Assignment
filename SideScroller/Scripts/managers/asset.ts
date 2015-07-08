@@ -2,21 +2,20 @@
     // Image and Sound Manifest;
     var assetManifest = [
         { id: "loading", src: "assets/images/loading.jpg" },
-        { id: "ocean", src: "assets/images/ocean-x.gif" },
+        { id: "ocean", src: "assets/images/bck.png" },
         { id: "engine", src: "assets/sounds/engine.ogg" },
         { id: "thunder", src: "assets/sounds/thunder.ogg" },
         { id: "yay", src: "assets/sounds/yay.ogg" },
-        { id: "heli", src: "assets/images/heli.gif" }
     ];
 
     // SpriteSheet Data Object
     var spriteSheetData = {
         "images": ["assets/images/atlas.png"],
         "frames": [
-            [2, 2, 226, 178],
+            [0, 0, 227, 134],
             [230, 2, 211, 69],
             [443, 69, 62, 63],
-            [443, 2, 65, 65],
+            [2, 152, 152, 62],
             [230, 73, 211, 69],
             [230, 144, 211, 69]
         ],
@@ -27,6 +26,7 @@
             "plane": [3],
             "playButton": [4],
             "tryAgainButton": [5]
+        
         }
     }
 

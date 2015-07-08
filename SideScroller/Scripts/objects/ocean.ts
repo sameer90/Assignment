@@ -15,21 +15,20 @@ module objects {
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.reset();
-
-            this.dy = 5;    
-
+            this.dy = -4;
             game.addChild(this.image);
         }
 
         update() {
             this.image.x += this.dy;
-            if (this.image.x >= 0) {
+            //alert(this.image.x);
+            if (this.image.x <= -2060) {
                 this.reset();
             }
         }
 
         reset() {
-            this.image.x = -790;
+            this.image.x = -260;
         }
 
         destroy() {

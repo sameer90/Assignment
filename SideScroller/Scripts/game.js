@@ -1,4 +1,4 @@
-﻿/// <reference path="constants.ts" />
+/// <reference path="constants.ts" />
 /// <reference path="managers/asset.ts" />
 /// <reference path="objects/cloud.ts" />
 /// <reference path="objects/island.ts" />
@@ -15,27 +15,21 @@
 // Changed online repo
 var stage;
 var game;
-
 var ocean;
 var plane;
 var island;
-var clouds = [];
+var clouds = []; // Clouds array;
 var scoreboard;
-
 var collision;
-
 var tryAgain;
 var playButton;
-
 var currentState;
 var currentStateFunction;
-
 // Preload function - Loads Assets and initializes game;
 function preload() {
     managers.Assets.init();
     managers.Assets.loader.addEventListener("complete", init);
 }
-
 // init called after Assets have been loaded.
 function init() {
     stage = new createjs.Stage(document.getElementById("canvas"));
@@ -43,24 +37,20 @@ function init() {
     createjs.Ticker.setFPS(60);
     createjs.Ticker.addEventListener("tick", gameLoop);
     optimizeForMobile();
-
     currentState = constants.MENU_STATE;
     changeState(currentState);
 }
-
 // Add touch support for mobile devices
 function optimizeForMobile() {
     if (createjs.Touch.isSupported()) {
         createjs.Touch.enable(stage);
     }
 }
-
 // Game Loop
 function gameLoop(event) {
     currentStateFunction();
     stage.update();
 }
-
 function changeState(state) {
     switch (state) {
         case constants.MENU_STATE:
@@ -68,16 +58,13 @@ function changeState(state) {
             currentStateFunction = states.menuState;
             states.menu();
             break;
-
         case constants.PLAY_STATE:
             // instantiate play screen
             currentStateFunction = states.playState;
             states.play();
             break;
-
         case constants.GAME_OVER_STATE:
             currentStateFunction = states.gameOverState;
-
             // instantiate game over screen
             states.gameOver();
             break;
