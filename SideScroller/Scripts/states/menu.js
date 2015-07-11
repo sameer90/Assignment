@@ -32,14 +32,13 @@ var states;
         // Show Cursor
         stage.cursor = "default";
         // Display Game Over
-        gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "MAIL PILOT");
+        gameNameLabel = new objects.Label(stage.canvas.width / 2, 150, "Fighter Copter \n\n Instructions\n1: Use Mouse \n2: Get Stars\n3: Get High Score\n4: Beware \nFighter planes");
         game.addChild(gameNameLabel);
         // Display Play Again Button
-        playButton = new objects.Button(stage.canvas.width / 2, 300, "playButton");
+        playButton = new objects.Button(stage.canvas.width / 2, 400, "playButton");
         game.addChild(playButton);
         playButton.addEventListener("click", playButtonClicked);
         stage.addChild(game);
     }
     states.menu = menu;
 })(states || (states = {}));
-//# sourceMappingURL=menu.js.map

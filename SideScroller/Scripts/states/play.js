@@ -15,6 +15,11 @@ var states;
         for (var count = 0; count < constants.CLOUD_NUM; count++) {
             clouds[count].update();
         }
+        if (scoreboard.score / 1000 == 1 && scoreboard.score != constants.PREVIOUS_SCORE_OF_BONUS) {
+            constants.PREVIOUS_SCORE_OF_BONUS = scoreboard.score;
+            constants.BONUS_LIVES += 1;
+            scoreboard.lives += 1;
+        }
         collision.update();
         scoreboard.update();
         if (scoreboard.lives <= 0) {

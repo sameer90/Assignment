@@ -16,6 +16,12 @@ module states {
             clouds[count].update();
         }
 
+        if (scoreboard.score / 1000 == 1 && scoreboard.score != constants.PREVIOUS_SCORE_OF_BONUS) {
+            constants.PREVIOUS_SCORE_OF_BONUS = scoreboard.score;
+            constants.BONUS_LIVES += 1;
+            scoreboard.lives += 1;
+        }
+                                                            
         collision.update();
         scoreboard.update();
 
@@ -52,7 +58,6 @@ module states {
 
         // Instantiate Collision Manager
         collision = new managers.Collision(plane, island, clouds, scoreboard);
-
         stage.addChild(game);
     }
 }
